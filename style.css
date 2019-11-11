@@ -1,0 +1,224 @@
+body{
+    background-image: url("img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Roboto, sans-serif;
+    min-height: 100vh;
+}
+
+.main[data-screen="menu"] section:not(.menu) {
+    display: none;
+}
+.main[data-screen="simple"] section:not(.container) {
+    display: none;
+}
+.main[data-screen="medium"] section:not(.container) {
+    display: none;
+}
+.main[data-screen="complicated"] section:not(.container) {
+    display: none;
+}
+
+.main{
+    min-height: 100vh;
+}
+
+.menu{
+    padding: 82px 0 300px 103px;
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: bold;
+    position: relative
+}
+.menu__header{
+    font-size: 57px;
+    line-height: 67px;
+    margin-bottom: 0;
+}
+.menu__text{
+    font-size: 19px;
+    line-height: 22px;
+    margin: 0;
+}
+.menu__list{
+    padding: 0;
+    font-size: 50px;
+    line-height: 59px;
+}
+.list__item{
+    list-style: none;
+}
+.list__check{
+    visibility: hidden;
+}
+.list__check:hover{
+    cursor: pointer;
+}
+.list__text{
+    position: relative;
+    margin-left: 25px;
+}
+.list__text:hover{
+    cursor: pointer;
+}
+.list__check:checked + .list__text::before{
+    content: '';
+    width: 26px;
+    height: 26px;
+    background-image: url("img/Rectangle 2.svg");
+    position: absolute;
+    top: 15px;
+    left: -55px;
+}
+.menu__but{
+    color: #FFFFFF;
+    font-size: 32px;
+    line-height: 37px;
+    background-color: #D62B2E;
+    border: 0;
+    border-radius: 7px;
+    padding: 29px 85px;
+}
+.menu__but:hover{
+    cursor: pointer;
+}
+.menu__cards{
+    position: absolute;
+    bottom: 100px;
+    right: 130px;
+
+}
+.menu__card{
+    width: 218px;
+    height: 341px;
+    background-image: url("img/card.jpg");
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    position: absolute;
+}
+.menu__card_left{
+    transform: rotate(11.9deg);
+    right: 180px;
+    bottom: 30px;
+}
+.menu__card_right{
+    transform: rotate(39.26deg);
+    right: 0;
+    bottom: 0;
+}
+@media (max-width: 1200px) {
+    .menu__cards{
+        display: none;
+    }
+}
+@media (max-width: 1050px) {
+    .menu{
+        padding-right: 103px;
+    }
+    .menu__header{
+        font-size: 52px;
+    }
+    .menu__list{
+        font-size: 45px;
+    }
+}
+
+
+.container{
+
+}
+.container__wrap{
+    display: none;
+}
+.container__cards{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container__wrap-card{
+    width: 218px;
+    height: 341px;
+    background-repeat: no-repeat;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    margin: 12px;
+    position: relative;
+    perspective: 600px;
+}
+.container__wrap-card:hover{
+    cursor: pointer;
+    margin-top: -24px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+    transform: rotate(-3.08deg);
+}
+.container__card{
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+.card__face{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+}
+.card__face_front{
+    background-image: url("img/card.jpg");
+    width: 100%;
+    border-radius: 10px;
+}
+.card__face_back{
+    transform: rotateY(180deg);
+    background-image: url("img/gameover.jpg");
+    border-radius: 10px;
+}
+.active{
+    transform: rotateY(180deg);
+}
+.bug{
+    background-image: url("img/card-bug.jpg");
+    border-radius: 10px;
+}
+
+.simple{
+    top: calc((100% - 341px - 24px) / 2);
+    left: calc((100% - 218px *3 - 24px * 2) / 2);
+}
+.medium{
+    flex-wrap: wrap;
+    width: 726px;
+    top: calc((100% - 341px * 2 - 24px * 2) / 2);
+    left: calc(50% - 726px / 2);
+}
+
+.complicated{
+    flex-wrap: wrap;
+    width: 1210px;
+    top: calc((100% - 341px * 2 -  24px *2) / 2);
+    left: calc(50% - 1210px / 2);
+}
+
+@media(max-width: 1300px){
+    .complicated{
+        width: 910px;
+        top: calc((100% - 247px * 2 -  24px * 2) / 2);
+        left: calc(50% - 910px / 2);
+    }
+    .complicated .container__wrap-card{
+        width: 158px;
+        height: 247px;
+    }
+    .card__face_front,
+    .card__face_back,
+    .bug{
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}

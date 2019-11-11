@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+    <main class="main" data-screen="menu">
+        <section class="menu">
+            <form class="menu__form">
+                <h1 class="menu__header">Выберите уровень сложности:</h1>
+                <p class="menu__text">Выберите сложность и игра начнется. Чем выше уровень - тем больше будет выборка карт.</p>
+                <ul class="menu__list list">
+                    <li class="list__item">
+                        <input name="level" type="radio" value="simple" id="simple" class="list__check" checked>
+                        <label for="simple" class="list__text">Простой</label>
+                    </li>
+                    <li class="list__item">
+                        <input name="level" type="radio" value="medium" id="medium" class="list__check">
+                        <label for="medium" class="list__text">Средний</label>
+                    </li>
+                    <li class="list__item">
+                        <input name="level" type="radio" value="complicated" id="complicated" class="list__check">
+                        <label for="complicated" class="list__text">Сложный</label>
+                    </li>
+                </ul>
+                <button class="menu__but" type="submit">Начать игру</button>
+                <div class="menu__cards">
+                    <div class="menu__card menu__card_left"></div>
+                    <div class="menu__card menu__card_right"></div>
+                </div>
+            </form>
+        </section>
+        <section class="container">
+            <div class="container__wrap">
+                <div class="container__wrap-card">
+                    <div class="container__card">
+                        <div class="card__face card__face_front"></div>
+                        <div class="card__face card__face_back"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="container__cards"></div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
